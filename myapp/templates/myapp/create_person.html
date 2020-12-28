@@ -1,0 +1,10 @@
+{% extends 'myapp/base.html' %}
+{% block content  %}     
+      <form  class="form-inline" method="post" action="">
+        <div class="form-group">
+            {% csrf_token %}
+            {{form}}
+            <input type='submit'>
+        </div>
+        </form>
+{% endblock content  %} 

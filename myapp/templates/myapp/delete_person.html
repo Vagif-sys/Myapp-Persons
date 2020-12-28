@@ -1,0 +1,8 @@
+<h1>You are in a Delete Pserson section</h1>
+<p>are you sure to delete this "{{person}}"</p> 
+<form action='' method="POST">
+   {% csrf_token  %}
+<a href="{% url 'dashboard' %}">Cancel</a>       
+<input type='submit' class="btn btn-danger" value='Yes'>
+</form>
+

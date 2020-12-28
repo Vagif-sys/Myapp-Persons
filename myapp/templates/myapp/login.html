@@ -1,0 +1,17 @@
+<h1>Login Here</h1>
+<form  method="post">
+   {% csrf_token %}
+  <div class="container">
+    <label for="uname"><b>Username:</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password:</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+        
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    <p><a href="{% url 'password_reset' %}">Forgotten your  password?</a></p>
+    <p>Dont have an acccount? <a class='btn btn-info' href='{% url "register"  %}'>Login up</a> </p>
+   <button class='btn btn-blue' type="submit">Login</button>
+   </form>

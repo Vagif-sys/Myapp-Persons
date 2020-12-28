@@ -1,0 +1,27 @@
+
+{% block content  %} 
+<form method="get" class="form-inline my-2 my-lg-0" action='' >
+    
+    <input name='q'  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+    <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
+<hr>
+<div class ="container">
+<div class ="row">
+  <div class="col-md-12">
+     <h3>Search results for<span class='text-info'> "{{request.GET.q}}" </span></h3>
+     <hr>
+     <div class ="row">
+        <div class="col-md-4">
+         {% for persons in person %}
+
+           <p>{{persons.name}}->{{persons.gender}}</p>
+         
+
+         {% endfor    %}
+
+   </div>
+</div>
+{% endblock content  %} 

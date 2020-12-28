@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+{% block content  %}
+<div>
+    <table class="table table-responsive">
+          <tr>
+            <th scope="row">№</th>
+            <td>Name:</td>
+            <td>Gender:</td>
+            <td>Age:</td>
+          </tr>
+          {% for form in person %}
+            <tr>
+                <th scope="row">{{form.id}}</th>
+                <td>{{form.name}}</td>
+                <td>{{form.gender}}</td>
+                <td>{{form.age}}</td>
+                <td><a href="{%  url 'update_person' form.id %}">Update</a></td>
+                <td><a href="{% url 'delete_person' form.id  %}">Delete</a></td>
+              </tr>
+          {% endfor %}
+      </table>
+</div>
+  {% endblock  %}

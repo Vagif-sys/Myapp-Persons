@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html'  %}
+{% block content  %} 
+<h3>User Profile</h3>
+{% include 'myapp/status.html'  %}
+
+<h4>Comment here</h4>
+<form method = "POST">
+       {% csrf_token %}
+    <p>{{form.comment}}</p>
+<button type='submit'>Submit</button>
+</form>
+{% endblock content  %} 
